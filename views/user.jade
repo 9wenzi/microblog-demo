@@ -1,0 +1,23 @@
+extends layout
+
+block content
+	div.jumbotron
+		form.form-horizontal(method="post",role="form",action="/post")
+			input.col-sm-8(type="text",name="article")
+			button.btn.btn-success(type="submit")
+				i.icon-comment.icon-white
+				| 发言
+	div.row
+		div.col-sm-4
+			h2 Carbo say
+			p 东风南风，一条胡拉
+		div.col-sm-4
+			h2 coo say
+			p 妈蛋，可真麻烦啊
+		div.col-sm-4
+			h2 caodabian say
+			p 我今天又没洗脚，好爽
+		each val in posts
+			div.col-sm-4
+				h2 #{val.user}说：
+				p #{val.post} &nbsp#{val.update}

@@ -1,0 +1,32 @@
+extends layout
+
+block content
+	div.jumbotron
+		if success&&user
+			h1 #{success},欢迎#{user.name}来到miroblog!
+		else if !success&&user
+			h1 欢迎 #{user.name} 来到 Microblog!
+		else
+			h1 Welcome to Microblog
+		p Microblog base on node.js technology
+		p
+			if user
+				a.btn.btn-primary.btn-lg(href='/logout') 退出
+				a.btn.btn-primary.btn-lg(href='/u/#{user.name}') 发表文章
+			else
+				a.btn.btn-primary.btn-lg(href="/login") Login
+				a.btn.btn-default.btn-lg(href="/reg") Reg
+	div.row
+		div.col-sm-4
+			h2 Carbo say
+			p 东风南风，一条胡拉
+		div.col-sm-4
+			h2 coo say
+			p 妈蛋，可真麻烦啊
+		div.col-sm-4
+			h2 caodabian say
+			p 我今天又没洗脚，好爽
+		each val in posts
+			div.col-sm-4
+				h2 #{val.user}说：
+				p #{val.post} &nbsp#{val.update}

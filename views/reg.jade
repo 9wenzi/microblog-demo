@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	h3 #{title}
+	form.form-horizontal(method="post",role="form")
+		fieldset
+			div.form-group
+				label.col-sm-2.control-label(for="username") 用户名
+				div.col-sm-10
+					input.input-xlarge#username(type="text",name="username")
+			div.form-group
+				label.col-sm-2.control-label(for="password") 密码
+				div.col-sm-10
+					input.input-xlarge#password(type="password",name="password")
+			div.form-group
+				label.col-sm-2.control-label(for="password-repeat") 再次输入密码
+				div.col-sm-10
+					input.input-xlarge#password-repeat(type="password",name="password-repeat")
+			div.form-group
+				div.col-sm-offset-2.col-sm-10
+					button.btn.btn-primary(type="submit") 注册
