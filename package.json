@@ -22,7 +22,9 @@
   },
   "description": "use express demo",
   "main": "app.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  },
   "keywords": [
     "microblog",
     "express"
